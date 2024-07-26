@@ -71,6 +71,55 @@ variable "private_subnets_tags" {
 }
 
 
+variable "database_subnets_cidr" {
+    type = list # default should not mention bcz user shld give input
+    validation {
+      condition = length(var.database_subnets_cidr)==2
+      error_message= "please give 2 private vlid subnet CIDR"
+    }
+  
+}
 
+variable "database_subnets_tags" {
+    default = {}
+  
+}
+
+variable "nat_gateway_tags" {
+    default = {}
+  
+}
+
+variable "public_route_table_tags" {
+    default = {}
+  
+}
+
+variable "private_route_table_tags" {
+    default = {}
+  
+}
+
+variable "database_route_table_tags" {
+    default = {}
+  
+}
+
+variable "is_peering_required" {
+    type = bool
+    default = false
+  
+}
+
+variable "acceptor_vpc_id" {
+    type = string
+    default = ""
+  
+}
+
+variable "aws_vpc_peering" {
+    default = {}
+  
+}
  
 
