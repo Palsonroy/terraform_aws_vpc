@@ -32,7 +32,7 @@ variable "project_name" {  # user should provide mandatory
   
 }
 
-variable "envirnoment" {  # user should provide mandatory 
+variable "environment" {  # user should provide mandatory 
    type = string
   
 }
